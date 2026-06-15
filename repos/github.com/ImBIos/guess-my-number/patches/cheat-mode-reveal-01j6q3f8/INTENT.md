@@ -4,7 +4,7 @@ title: Add --cheat flag to reveal the secret number
 target_repo: github.com/ImBIos/guess-my-number
 target_area: [index.ts]
 status: applied
-applied_upstream_pr: none
+applied_upstream_pr: closed("Cool idea but defeats the purpose of the game. Not in scope.")
 version: 1
 license: MIT
 author: ImBIos
