@@ -1,0 +1,21 @@
+{
+  "target_repo": "github.com/ImBIos/guess-my-number",
+  "upstream_main_branch": "main",
+  "upstream_remote": "upstream",
+  "schedule": "on-upstream-release",
+  "token_budget_per_run": 100000,
+  "on_budget_exceed": "pause",
+  "patches": {
+    "cheat-mode-reveal-01j6q3f8": {
+      "status": "applied",
+      "version": 1,
+      "author": "ImBIos",
+      "last_modified_by": "ImBIos",
+      "last_realized_against_commit": "e93f0b1"
+    }
+  },
+  "apply_order": [
+    "cheat-mode-reveal-01j6q3f8"
+  ],
+  "slug_aliases": {}
+}

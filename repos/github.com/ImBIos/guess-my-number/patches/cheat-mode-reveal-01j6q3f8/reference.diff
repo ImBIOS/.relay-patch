@@ -1,0 +1,15 @@
+diff --git a/index.ts b/index.ts
+--- a/index.ts
++++ b/index.ts
+@@ -1,8 +1,13 @@
++const args = process.argv.slice(2);
++const CHEAT = args.includes("--cheat");
++
+ const SECRET = generateSecret();
+ let attempts = 0;
+ 
++if (CHEAT) console.log(`🤫 [CHEAT] The secret is ${SECRET}\n`);
++
+ console.log("🎲 Guess My Number!");
+ console.log(`I'm thinking of a number between ${MIN} and ${MAX}.`);
+ console.log("");
