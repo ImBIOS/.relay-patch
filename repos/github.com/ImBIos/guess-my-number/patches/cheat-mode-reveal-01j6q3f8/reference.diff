@@ -1,15 +1,21 @@
 diff --git a/index.ts b/index.ts
+index d117f4a..2ed11e5 100644
 --- a/index.ts
 +++ b/index.ts
-@@ -1,8 +1,13 @@
-+const args = process.argv.slice(2);
+@@ -7,6 +7,7 @@ import {
+ } from "./game";
+ 
+ const args = process.argv.slice(2);
 +const CHEAT = args.includes("--cheat");
-+
- const SECRET = generateSecret();
+ const diffArg = args.find((a) => a.startsWith("--difficulty="));
+ const diffValue = diffArg?.split("=")[1] ?? "hard";
+ const difficulty = parseDifficulty(diffValue);
+@@ -21,6 +22,8 @@ const range = DIFFICULTY_RANGES[difficulty];
+ const SECRET = generateSecret(range.min, range.max);
  let attempts = 0;
  
 +if (CHEAT) console.log(`🤫 [CHEAT] The secret is ${SECRET}\n`);
 +
  console.log("🎲 Guess My Number!");
- console.log(`I'm thinking of a number between ${MIN} and ${MAX}.`);
- console.log("");
+ console.log(`Difficulty: ${difficulty} (${range.min}-${range.max})`);
+ console.log(`I'm thinking of a number between ${range.min} and ${range.max}.`);
