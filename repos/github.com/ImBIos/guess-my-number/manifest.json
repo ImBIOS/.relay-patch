@@ -12,10 +12,18 @@
       "author": "ImBIos",
       "last_modified_by": "ImBIos",
       "last_realized_against_commit": "cccad13"
+    },
+    "hint-mode-half-range-01j7b2c4": {
+      "status": "applied",
+      "version": 1,
+      "author": "ImBIos",
+      "last_modified_by": "ImBIos",
+      "last_realized_against_commit": "cccad13"
     }
   },
   "apply_order": [
-    "cheat-mode-reveal-01j6q3f8"
+    "cheat-mode-reveal-01j6q3f8",
+    "hint-mode-half-range-01j7b2c4"
   ],
   "slug_aliases": {}
 }

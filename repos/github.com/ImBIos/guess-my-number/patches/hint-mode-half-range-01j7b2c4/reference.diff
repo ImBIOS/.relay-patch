@@ -1,0 +1,46 @@
+diff --git a/index.ts b/index.ts
+index b745ae4..3f1f4df 100644
+--- a/index.ts
++++ b/index.ts
+@@ -8,6 +8,7 @@ import {
+ 
+ const args = process.argv.slice(2);
+ const CHEAT = args.includes("--cheat");
++const HINT = args.includes("--hint");
+ const diffArg = args.find((a) => a.startsWith("--difficulty="));
+ const diffValue = diffArg?.split("=")[1] ?? "hard";
+ const difficulty = parseDifficulty(diffValue);
+@@ -21,8 +22,11 @@ if (!difficulty) {
+ const range = DIFFICULTY_RANGES[difficulty];
+ const SECRET = generateSecret(range.min, range.max);
+ let attempts = 0;
++let hintMin = range.min;
++let hintMax = range.max;
+ 
+-if (CHEAT) console.log(`🤫 [CHEAT] The secret is ${SECRET}\\n`);
++if (CHEAT) console.log(`🤫 [CHEAT] The secret is ${SECRET}\n`);
++if (HINT) console.log(`💡 [HINT] Half-range mode enabled.\n`);
+ 
+ console.log("🎲 Guess My Number!");
+ console.log(`Difficulty: ${difficulty} (${range.min}-${range.max})`);
+@@ -49,8 +53,18 @@ while (true) {
+     console.log(`🎉 Correct! You won in ${attempts} attempt${attempts === 1 ? "" : "s"}.`);
+     break;
+   } else if (result === "higher") {
+-    console.log("📈 Higher!");
++    hintMin = guess + 1;
++    if (HINT) {
++      console.log(`📈 Higher! Try between ${hintMin} and ${hintMax}.`);
++    } else {
++      console.log("📈 Higher!");
++    }
+   } else {
+-    console.log("📉 Lower!");
++    hintMax = guess - 1;
++    if (HINT) {
++      console.log(`📉 Lower! Try between ${hintMin} and ${hintMax}.`);
++    } else {
++      console.log("📉 Lower!");
++    }
+   }
+ }
