@@ -44,3 +44,22 @@ build.
 
 Previous approach (reference.diff): 5-line addition to `index.ts`, all at the
 top of the file before the game banner. Clean insertion point.
+
+## Implementation constraints (auto-enriched from attempt history)
+
+- DO NOT modify `game.ts` — it has never been touched by a working realization
+- DO NOT try to apply `reference.diff` mechanically — it is stale whenever
+  upstream changes the surrounding context
+- MUST piggyback on existing `process.argv.slice(2)` if upstream already has it
+  — don't duplicate the args parsing
+
+## Pitfalls (from attempt history)
+
+- v2.0.0 changed the import line in `index.ts` (removed `MIN, MAX`, added
+  `DIFFICULTY_RANGES, parseDifficulty`). The cheat logic doesn't need `MIN/MAX`
+  directly so this is safe.
+- v2.0.0 already has `const args = process.argv.slice(2);` — adding it again
+  would be duplicate, not wrong, but ugly. Use the existing one.
+- v2.0.0 generates the secret with `generateSecret(range.min, range.max)` instead
+  of bare `generateSecret()`. The cheat print just needs the result — works either
+  way.
