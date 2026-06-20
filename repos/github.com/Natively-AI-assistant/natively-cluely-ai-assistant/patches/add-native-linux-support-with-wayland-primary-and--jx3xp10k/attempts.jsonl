@@ -1,0 +1,1 @@
+{"n":1,"phase":"drafting","timestamp":"2026-06-20T11:46:28.234Z","upstream_sha":"33feffb","approach":"add native Linux support with Wayland primary and X11/XWayland secondary, including PipeWire/PulseAudio system audio capture, Electron ozone platform auto-detection, Wayland-aware overlay windows, and xdg-desktop-portal screenshots","result":"passed","tokens":0,"model":"manual"}

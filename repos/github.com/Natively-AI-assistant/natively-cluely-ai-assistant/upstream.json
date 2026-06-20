@@ -1,0 +1,10 @@
+{
+  "upstream_url": "https://github.com/Natively-AI-assistant/natively-cluely-ai-assistant.git",
+  "upstream_main_branch": "main",
+  "upstream_remote": "upstream",
+  "fork_url": "git@github.com:ImBIOS/natively-cluely-ai-assistant.git",
+  "fork_remote": "origin",
+  "last_known_upstream_sha": "33feffb",
+  "last_synced_at": "2026-06-20T03:40:10.429Z",
+  "schedule": "on-upstream-release"
+}
