@@ -25,5 +25,16 @@
   "apply_order": [
     "add-native-linux-support-with-wayland-primary-and--jx3xp10k"
   ],
-  "slug_aliases": {}
+  "slug_aliases": {},
+  "version_notes": [
+    {
+      "version": "v0.2.10",
+      "date": "2026-06-21",
+      "tools_added": [
+        "relay-patch publish (stages + commits + pushes .relay-patch repo)",
+        "drift-check auto-tracker via gh CLI (queries upstream PR state)",
+        "manifest auto-write-back on UPSTREAMED transition"
+      ]
+    }
+  ]
 }
