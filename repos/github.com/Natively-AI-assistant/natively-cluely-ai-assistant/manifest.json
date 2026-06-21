@@ -33,7 +33,8 @@
       "tools_added": [
         "relay-patch publish (stages + commits + pushes .relay-patch repo)",
         "drift-check auto-tracker via gh CLI (queries upstream PR state)",
-        "manifest auto-write-back on UPSTREAMED transition"
+        "manifest auto-write-back on UPSTREAMED transition",
+        "CLI: single-dash flags (-m) now work same as --message"
       ]
     }
   ]
